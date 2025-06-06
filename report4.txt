@@ -1,0 +1,69 @@
+# Task 4: Windows Firewall Configuration and Traffic Filtering
+
+## Objective  
+Perform basic Windows Firewall configuration to block and allow specific network traffic by manipulating firewall rules using the GUI interface. Understand how firewall rules affect communication on specific ports and how they contribute to system security.
+
+
+## Tools Used  
+- Windows Defender Firewall (Advanced Security)  
+- Telnet Client (for connection testing)  
+- Windows Command Prompt  
+- Google Chrome (for research)
+
+
+
+## Firewall Rule Implementation Summary  
+
+| Step                          | Action Performed                                        | Description                                      |
+|------------------------------|----------------------------------------------------------|--------------------------------------------------|
+| 1. Open Firewall Settings     | Accessed `Windows Defender Firewall > Advanced Settings` | Navigated to configuration tool for rules        |
+| 2. View Current Rules         | Opened Inbound Rules panel                               | Reviewed existing inbound traffic rules          |
+| 3. Block Port 23 (Telnet)     | Created new inbound rule to block TCP port 23            | Prevented any inbound Telnet traffic             |
+| 4. Test Connection            | Ran `telnet localhost 23` in CMD                         | Confirmed port 23 was blocked as connection failed |
+| 5. Allow Port 22 (SSH)        | Created new inbound rule to allow TCP port 22            | Simulated allowing trusted remote SSH access     |
+| 6. Remove Rule for Port 23    | Deleted the blocking rule to revert configuration        | Restored firewall to original state              |
+
+
+
+## Screenshots  
+
+> ![Firewall Advanced Settings](screenshots/firewall_settings.png)  
+> ![Block Port 23](screenshots/block_port_23.png)  
+> ![Telnet Connection Failed](screenshots/telnet_blocked.png)  
+> ![Rule Removed](screenshots/rule_deleted.png)
+
+
+## Key Learnings  
+
+- GUI-based firewalls on Windows are powerful yet user-friendly for creating traffic control rules.
+- Port-based blocking is effective to prevent insecure services like Telnet.
+- It's critical to test firewall rules using utilities like Telnet or `netstat`.
+- Any changes should be reverted to avoid accidental service disruptions.
+
+
+
+## Security Benefits of Firewall  
+
+1. **Traffic Filtering:**  
+   - Helps prevent unauthorized network traffic and cyberattacks.
+
+2. **Attack Surface Reduction:**  
+   - Closing unused ports reduces entry points for hackers.
+
+3. **Enforcement of Network Policy:**  
+   - Admins can define custom traffic rules for specific applications or services.
+
+
+
+## Common Best Practices  
+
+- **Block unused ports:** Services like Telnet should be disabled or blocked by default.
+- **Allow only trusted traffic:** Rules should permit only necessary communication (e.g., SSH, HTTPS).
+- **Log and monitor traffic:** Enable firewall logging to detect anomalies.
+- **Test rules frequently:** Always validate that security rules work as expected.
+
+
+## Conclusion  
+
+This exercise demonstrated hands-on knowledge of firewall configuration and how simple rule changes can directly affect system communication. Understanding the logic of traffic filtering strengthens both offensive and defensive cybersecurity skills. Windows Defender Firewall provided an easy interface to manage these rules and test their impact in real time.
+
